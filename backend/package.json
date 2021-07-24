@@ -1,0 +1,33 @@
+{
+  "name": "koa2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/www.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development nodemon bin/www.js",
+    "prod": "cross-env NODE_ENV=production nodemon bin/www.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^10.0.0",
+    "cross-env": "^7.0.3",
+    "glob": "^7.1.7",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-compose": "^4.1.0",
+    "koa-jwt": "^4.0.1",
+    "koa-log4": "^2.3.2",
+    "moment": "^2.29.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.1",
+    "nodemon": "^2.0.7"
+  }
+}
