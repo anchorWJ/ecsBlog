@@ -1,13 +1,16 @@
-FROM node:latest
+FROM node:latest as build-stage
 
 WORKDIR /app
-COPY . /app
-
+COPY package*.json ./
 RUN npm install
-
-COPY ./ ./
-
+COPY ./ .
 CMD [ "npm", "run", "prod" ]
 # RUN npm run prod
 
-EXPOSE 3000
+
+FROM nginx:latest as production-stage
+RUN mkdir /app
+COPY dist/ /usr/share/nginx/html/
+COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+
